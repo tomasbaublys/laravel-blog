@@ -1,0 +1,1 @@
+Simple laravel blog based on Laracasts learnings
