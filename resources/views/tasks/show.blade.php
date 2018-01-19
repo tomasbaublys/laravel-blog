@@ -6,9 +6,7 @@
 </head>
 <body>
     <ul>
-		@foreach ($tasks as $task)
-			<li>{{ $task->body }}</li>
-		@endforeach
+		{{ $task->body }}
     </ul>
 </body>
 </html>
