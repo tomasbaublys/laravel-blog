@@ -13,9 +13,10 @@ class TaskController extends Controller
     	return view('tasks.index', compact('tasks'));
     }
 
-    public function show($id)
+    // route and model binding (Task $task) = Task::find(wildcard);
+    public function show(Task $task) 
     {
-    	$task = Task::find($id);
+    	$task;
     	return view('tasks.show', compact('task'));
     }
 }
