@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-	// Illuminate\Database\Eloquent\Builder
-    public function scopeIncomplete($labas)
+	// Using local scope
+    public function scopeIncomplete($query)
     {
-    	return $labas->where('complete', 0);
+    	return $query->where('complete', 0);
     }
 }
