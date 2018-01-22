@@ -9,7 +9,8 @@ class PostController extends Controller
 {
     public function index()
     {
-    	return view('posts.index');
+    	$posts = Post::latest()->get();
+    	return view('posts.index', compact('posts'));
     }    
 
     public function create()
@@ -19,22 +20,6 @@ class PostController extends Controller
 
     public function store()
     {
-		
-    	// 1. example to store to db
-		// $post = new Post;
-		// $post->title = request('title');
-		// $post->body = request('body');
-		// $post->save();
-		// return redirect('/');
-
-		// 2. example to store to db
-		// $post = new Post;
-		// Post::create([
-		// 	'title' => request('title'),
-		// 	'body' => request('body'),
-		// ]);
-		
-		// 3. example to store to db plus validation
 		$this->validate(request(), [
 			'title' => 'required',
 			'body' => 'required'
@@ -45,8 +30,8 @@ class PostController extends Controller
 
     }
 
-    public function show()
+    public function show(Post $post)
     {
-    	return view('posts.show');
+    	return view('posts.show', compact('post'));
     }
 }
