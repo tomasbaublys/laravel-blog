@@ -21,5 +21,8 @@
 
 	  <button type="submit" class="btn btn-default">Publish</button>
 	</form>
+	
+	@include ('partials.errors')
+	
 </div>
 @endsection

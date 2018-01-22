@@ -34,7 +34,12 @@ class PostController extends Controller
 		// 	'body' => request('body'),
 		// ]);
 		
-		// 3. example to store to db
+		// 3. example to store to db plus validation
+		$this->validate(request(), [
+			'title' => 'required',
+			'body' => 'required'
+		]);
+		
     	Post::create(request(['title', 'body']));
 		return redirect('/');
 
