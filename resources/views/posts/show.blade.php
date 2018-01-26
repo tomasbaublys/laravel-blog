@@ -18,7 +18,7 @@
 			@endforeach
 			</ul>
 		</div>
-		<hr>
+
 		<form method="POST" action="/posts/{{ $post->id }}/comments">
 			{{ csrf_field() }}
 			<div class="form-group">

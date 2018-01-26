@@ -9,7 +9,7 @@ class RegistrationController extends Controller
 {
     public function create()
     {
-    	return view('sessions.create');
+    	return view('registration.create');
     }
 
     public function store()
@@ -17,7 +17,7 @@ class RegistrationController extends Controller
     	$this->validate(request(), [
     		'name' => 'required', 
     		'email' => 'required|email', 
-    		'password' => 'required'
+    		'password' => 'required|confirmed'
     	]);
 
     	$user = User::create(request(['name', 'email', 'password']));
@@ -26,5 +26,4 @@ class RegistrationController extends Controller
 
     	return redirect()->home();
     }
-
 }
