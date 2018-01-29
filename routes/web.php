@@ -11,11 +11,6 @@
 |
 */
 
-use App\Task;
-
-// Route::get('/tasks', 'TaskController@index');
-// Route::get('/tasks/{task}', 'TaskController@show');
-
 Route::get('/', 'PostController@index')->name('home');
 Route::get('/posts/create', 'PostController@create');
 Route::post('/posts', 'PostController@store');
