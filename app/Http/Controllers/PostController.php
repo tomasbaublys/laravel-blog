@@ -38,6 +38,10 @@ class PostController extends Controller
         auth()->user()->publish(
             new Post(request(['title', 'body']))
         );
+
+        session()->flash(
+            'message', 'Your post has now been published'
+        );
 		
 		return redirect('/');
 
