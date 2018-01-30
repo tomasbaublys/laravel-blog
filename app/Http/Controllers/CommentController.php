@@ -12,7 +12,7 @@ class CommentController extends Controller
     {
     	$this->validate(request(), ['body' => 'required|min:10']);
     	$post->addComment(request('body'));
-
+    	
     	return back();
     }
 }
